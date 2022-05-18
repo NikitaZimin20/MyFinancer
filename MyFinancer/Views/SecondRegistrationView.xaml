@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="MyFinancer.Views.SecondRegistrationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyFinancer.Views" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Height="660" Width="650">
+    <Grid 
+     Background="#1C2F3E" 
+                         
+                        >
+        <StackPanel>
+            <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0"
+                                         PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25">
+                <StackPanel>
+                    <Button 
+                        Content="Get Back"/>
+                    <Button  Content="Exit Application" 
+                             Command="{StaticResource CloseApp}" />
+
+                </StackPanel>
+            </materialDesign:PopupBox>
+
+            <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold" Text="Create your own account" Foreground="#FFF4EAEA"/>
+            <TextBlock FontSize="17" 
+                       FontWeight="SemiBold" 
+                       HorizontalAlignment="Center" 
+                       Text="Sing in" 
+                       Foreground="#FFF6F4F4"/>
+            <materialDesign:PackIcon 
+                Kind="Sign"
+                HorizontalAlignment="Center"
+                Width="80"
+                Height="60"
+                Margin=" 0 20"
+                />
+            <TextBox 
+                         
+                         Width="300" 
+                         FontSize="18" 
+                         materialDesign:HintAssist.Hint="Username"
+                          materialDesign:HintAssist.Background="Transparent"
+                         BorderThickness="2"
+                         
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+                         Foreground="#FFF4EEEE" Cursor="IBeam" 
+                        Margin="0 25 0 0"/>
+            <TextBox 
+                         
+                         Width="300" 
+                         FontSize="18" 
+                         materialDesign:HintAssist.Hint="Password"
+                          materialDesign:HintAssist.Background="Transparent"
+                         BorderThickness="2"
+                          
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+                         Foreground="#FFF4EEEE" Cursor="IBeam" 
+                        Margin="0 25 0 0"/>
+            <TextBox 
+                         
+                         Width="300" 
+                         FontSize="18" 
+                         materialDesign:HintAssist.Hint="Confirm Password"
+                          materialDesign:HintAssist.Background="Transparent"
+                         BorderThickness="2"
+                         
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+                         Foreground="#FFF4EEEE" 
+                            Cursor="IBeam" 
+                        Margin="0 25 0 0"/>
+            <Button 
+                Content="Accept"
+                Width="320"
+                Height="60"
+                Margin="0 40"/>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

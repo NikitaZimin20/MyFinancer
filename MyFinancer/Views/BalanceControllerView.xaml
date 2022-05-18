@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="MyFinancer.Views.BalanceControllerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyFinancer.Views"
+             xmlns:viewmodels="clr-namespace:MyFinancer.ViewModels" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:models="clr-namespace:MyFinancer.Models" d:DataContext="{d:DesignInstance Type=viewmodels:BalanceControllerViewModel}" 
+             mc:Ignorable="d" 
+            Height="450" Width="800"
+            >
+    
+    <Grid Background="#3949ab">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock 
+            Grid.Column="1" 
+            Text="Property Text"
+            Foreground="White"
+            FontSize="30"
+            FontFamily="{DynamicResource MaterialDesignFont}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <TextBlock
+            Grid.Row="1"
+            Text="Sum"
+            Foreground="White"
+            FontSize="30"
+            FontFamily="{DynamicResource MaterialDesignFont}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="0 -200 0 0"/>
+        <TextBlock
+            Grid.Row="1"
+            Text="Reson"
+            Foreground="White"
+            FontSize="30"
+            FontFamily="{DynamicResource MaterialDesignFont}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="0 -0 0 0"/>
+        <TextBlock
+            Grid.Row="1"
+            Text="Date"
+            Foreground="White"
+            FontSize="30"
+            FontFamily="{DynamicResource MaterialDesignFont}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="0 200 0 0"/>
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Background="White"
+            Height="40"
+            Width="267"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="0 -200 0 0"
+            Text="{Binding Sum}"
+            />
+        <ComboBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Background="White"
+            Height="40"
+            Width="267"
+            HorizontalAlignment="Center"
+            Text="{Binding Reason}" IsEditable="True"
+           />
+        <DatePicker
+            
+            Grid.Row="1"
+            Grid.Column="1"
+            Background="White"
+            Height="40"
+            Width="267"
+            HorizontalAlignment="Center"
+            Text="{Binding Date}" 
+            Margin="0 200 0 0"/>
+
+        <Button
+           
+            Background="#1a237e"
+            Grid.Column="2"
+            Grid.Row="1"
+            Width="200"
+            Height="100"
+            Content="Apply"
+            Foreground="White"
+            FontFamily="{DynamicResource MaterialDesignFont}"
+            FontSize="30"
+            VerticalAlignment="Top"
+            Margin="40 40 0 0"
+            Command="{Binding TakeNoteCommand}"
+            />
+        <Button
+            Background="#1a237e"
+            Grid.Column="2"
+            Grid.Row="1"
+            Width="200"
+            Height="100"
+            Content="Clear"
+            Foreground="White"
+            FontFamily="{DynamicResource MaterialDesignFont}"
+            FontSize="30"
+            VerticalAlignment="Top"
+            Margin="40 200 0 0"/>
+        <Button
+            Background="Transparent"
+            Grid.Column="2" 
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0 10 0 0"
+            Command="{StaticResource CloseApp}"
+            BorderThickness="0">
+            <materialDesign:PackIcon 
+                Kind="Close" 
+                Height="60" 
+                Width="50" 
+                VerticalAlignment="Center" />
+        </Button>
+        <Button 
+            Width="110"
+            Height="40"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="0 10 0 0"
+            Background="Transparent"
+            BorderThickness="0">
+            <materialDesign:PackIcon 
+                Kind="ArrowBack"
+                Height="60" 
+                Width="50" 
+                VerticalAlignment="Center"/>
+        </Button>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="MyFinancer.Views.AutorizationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyFinancer.Views" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:viewmodels="clr-namespace:MyFinancer.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:AutorizationViewModel}"
+             mc:Ignorable="d" 
+             Height="660" Width="650"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             Background="{x:Null}"
+        >
+
+
+
+    <Grid 
+     Background="#1C2F3E" 
+                         
+                        >
+        <StackPanel>
+            <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0"
+                                         PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25">
+                <StackPanel>
+                    <Button  Content="Exit Application" 
+                                 Command="{StaticResource CloseApp}" />
+
+                </StackPanel>
+            </materialDesign:PopupBox>
+            <materialDesign:PackIcon 
+                    Kind="Home"
+                    Height="50" 
+                    Width="70"
+                    HorizontalAlignment="Center"
+                    Margin="0 40 0 0"/>
+            <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold" Text="Create your own account" Foreground="#FFF4EAEA"/>
+            <TextBlock FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center" Text="Sing in" Foreground="#FFF6F4F4"/>
+            <TextBox Margin="0 50 0 0" 
+                         x:Name="txtUserName" 
+                         Width="300" 
+                         FontSize="18" 
+                         materialDesign:HintAssist.Hint="Enter Username"
+                          materialDesign:HintAssist.Background="Transparent"
+                         BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" 
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+                         Foreground="#FFF4EEEE" Cursor="IBeam"   >
+
+            </TextBox>
+
+            <PasswordBox 
+                    Margin=" 0 20 0 0" 
+                    x:Name="txtPassword" 
+                    Width=" 300" 
+                    FontSize="18"
+                              materialDesign:HintAssist.Hint="Enter Password"
+                    BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" 
+                    Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
+                    Foreground="White"
+                    materialDesign:HintAssist.Background="Transparent"/>
+            <PasswordBox 
+                    Margin=" 0 20 0 0" 
+                    x:Name="txtpassconfirm" 
+                    Width=" 300" 
+                    FontSize="18"
+                    materialDesign:HintAssist.Hint="Confirm Password" 
+                    BorderThickness="2"
+                         BorderBrush="{DynamicResource MaterialDesignDivider}" 
+                    Style="{StaticResource MaterialDesignOutlinedPasswordBox}" 
+                    Foreground="White" 
+                    materialDesign:HintAssist.Background="Transparent"/>
+            <Grid Height="150" VerticalAlignment="Center" >
+
+                <Button 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        x:Name="loginbtn"
+                        Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth0" 
+                        Height="50" 
+                        Content="Log In" 
+                        Cursor="Hand" 
+                        Margin="87 0"
+                        Width="220"
+                    Command="{Binding NavigateMainCommand}"
+                      />
+                <Button
+                       Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth0" 
+                        Height="50" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Content="Sign In"
+                        Margin="87 0"
+                        Width="220"/>
+
+            </Grid>
+           
+
+        </StackPanel>
+
+
+    </Grid>
+</UserControl>
